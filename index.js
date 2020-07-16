@@ -38,4 +38,22 @@ app.get('/registration/:regNum', (req, res) => {
     });
 });
 
+app.get('/eventid/:eid', (req, res) => {
+    // This endpoint returns Reports by EventId
+    Report.find({ EventId:req.params.eid }, (err, result) => {
+        if (err) return console.error(err);
+        res.send(result);
+    });
+});
+
+app.get('/accidentnumber/:anum', (req, res) => {
+    // This endpoint returns Reports by AccidentNumber
+    Report.find({ AccidentNumber:req.params.anum }, (err, result) => {
+        if (err) return console.error(err);
+        res.send(result);
+    });
+});
+
+
+
 app.listen(port, () => console.log(`Aviation Accident API listening on port ${port}`));

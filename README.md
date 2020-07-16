@@ -25,7 +25,18 @@ The data used by this API is public information obtained from the [NTSB Website]
 * **AmateurBuilt**: Yes or No, was the aircraft amateur built
 * **NumberOfEngines**: The number of engines this aircraft has
 * **EngineType**: The type of engines this aircraft has (Turbo Fan, Reciprocating, etc)
-* **FarDescription**: A description of the 
+* **FarDescription**: A description of the Federal Aviation Regulation that this flight occured under (part 135 operation for example)
+* **Schedule**: Yes or No was this a regularly scheduled flight
+* **PurposeOfFlight**: What was the purpose of this flight
+* **AirCarrier**: The airline who operated this flight
+* **TotalFatalInjuries**: The number of fatal injuries 
+* **TotalSeriousinjuries**: The number of serious injuries
+* **TotalMinorInjuries**: The number of minor injuries
+* **TotalUninjured**: The number of uninjured 
+* **WeatherCondition**: The weather conditions at the time of this event
+* **BroadphaseOfFlight**: What phase of flight was it (for example: cruise)
+* **ReportStatus**: The status of the report this data was taken from (for example: preliminary, foreign, etc)
+* **PublicationDate**: The date the report was published
 
 ## API Endpoints
 **It should be noted that all data types returned in the JSON are strings because this is how the NTSB provided the data.**
@@ -37,3 +48,9 @@ Renders the information page
 Returns a random Report
 ### /registration/:regNum
 `http://localhost:5000/registration/N739PA` Returns all Reports corresponding to this Registration Number
+### /eventid/:eid
+`http://localhost:5000/eventid/20001213X27403`
+Returns the Report corresponding to this EventId
+### /accidentnumber/:anum
+`http://localhost:5000/accidentnumber/DCA89RA014`
+Returns the Report corresponding to this AccidentNumber
