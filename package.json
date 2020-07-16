@@ -1,0 +1,33 @@
+{
+  "name": "aviation_accident_api",
+  "version": "1.0.0",
+  "description": "an api for aviation accidents and incidents",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "nodemon index"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/cwille97/Aviation-Accident-API.git"
+  },
+  "keywords": [
+    "api",
+    "aviation",
+    "airplane",
+    "ntsb",
+    "aircraft",
+    "crash"
+  ],
+  "author": "Cedric Wille cwille97@bu.edu",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/cwille97/Aviation-Accident-API/issues"
+  },
+  "homepage": "https://github.com/cwille97/Aviation-Accident-API#readme",
+  "dependencies": {
+    "express": "^4.17.1",
+    "mongoose": "^5.9.24",
+    "nodemon": "^2.0.4"
+  }
+}

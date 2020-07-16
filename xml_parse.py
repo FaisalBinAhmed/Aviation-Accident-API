@@ -1,6 +1,6 @@
 # file: xml_parse.py
 # author: Cedric Wille cwille97@bu.edu
-# description: a program to parse a bunch of XML data and split it up
+# description: Helper functions to convert XML data from the NTSB website into JSON format
 # date: 7/15/20
 
 # data we are parsing is a big XML download from: https://www.ntsb.gov/investigations/AccidentReports/_layouts/ntsb.aviation/Index.aspx
