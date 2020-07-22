@@ -1,6 +1,7 @@
 # Aviation Accident API
 
 The data used by this API is public information obtained from the [NTSB Website](https://www.ntsb.gov/investigations/AccidentReports/_layouts/ntsb.aviation/Index.aspx) where it was downloaded as an XML file. Note that the NTSB maintains this dataset and some pieces of data are missing or withheld. I then wrote a custom Python script to automate the conversion of this data to JSON format. I had to manually delete a few characters at the beginning and end of the file. I was then able to import the JSON file into MongoDB using the command: `mongoimport -v -d ntsb -c data xml_results.json --batchSize 1 --jsonArray`
+[For questions and comments, or if you plan on heavily using this API please contact me via this Google Form and I'll try to get back to you ASAP.](https://docs.google.com/forms/d/e/1FAIpQLScpHdcjWVSzXQmOPy2T-lw-AIepDzjpZUvm7xr-VxxUknVtEQ/viewform?usp=sf_link) If usage and demand scales in the future I may need to implement API keys to handle the load and cover costs.
 
 ## Definitions
 * **Report**: a Report item from the database, can be an incident or an accident
