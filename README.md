@@ -42,73 +42,73 @@ The data used by this API is public information obtained from the [NTSB Website]
 ## API Endpoints
 **It should be noted that all data types returned in the JSON are strings because this is how the NTSB provided the data.**
 ### /
-`http://localhost:5000/`
+`http://aviation-accident-api.tech/`
 Renders the information page
 ### /random
-`http://localhost:5000/random`
+`http://aviation-accident-api.tech/random`
 Returns a random Report
 ### /registration/:regNum
-`http://localhost:5000/registration/N739PA` Returns all Reports corresponding to this Registration Number
+`http://aviation-accident-api.tech/registration/N739PA` Returns all Reports corresponding to this Registration Number
 ### /eventid/:eid
-`http://localhost:5000/eventid/20001213X27403`
+`http://aviation-accident-api.tech/eventid/20001213X27403`
 Returns the Report corresponding to this EventId
 ### /accidentnumber/:anum
-`http://localhost:5000/accidentnumber/DCA89RA014`
+`http://aviation-accident-api.tech/accidentnumber/DCA89RA014`
 Returns the Report corresponding to this AccidentNumber
 ### /date/:date/:qty?
-`http://localhost:5000/date/12-05-1990/5`
+`http://aviation-accident-api.tech/date/12-05-1990/5`
 Returns the Reports corresponding to this date with an optional limit of 5, default limit is 1
 ### /country/:country/:qty?
-`http://localhost:5000/country/United%20States/5`
+`http://aviation-accident-api.tech/country/United%20States/5`
 Returns the Reports corresponding to this country with an optional limit of 5, default limit is 1
 ### /latitude/:lat/:qty?
-`http://localhost:5000/latitude/20.2/5`
+`http://aviation-accident-api.tech/latitude/20.2/5`
 Returns the Reports corresponding to this latitude with an optional limit of 5, default limit is 1
 ### /longitude/:long/:qty?
-`http://localhost:5000/longitude/20.2/5`
+`http://aviation-accident-api.tech/longitude/20.2/5`
 Returns the Reports corresponding to this longitude with an optional limit of 5, default limit is 1
 ### /airportcode/:code/:qty?
-`http://localhost:5000/airportcode/KJFK/5`
+`http://aviation-accident-api.tech/airportcode/KJFK/5`
 Returns the Reports corresponding to this airport code with an optional limit of 5, default limit is 1
 ### /airportname/:name/:qty?
-`http://localhost:5000/airportname/FLAGLER%20COUNTY/5`
+`http://aviation-accident-api.tech/airportname/FLAGLER%20COUNTY/5`
 Returns the Reports corresponding to this airport name with an optional limit of 5, default limit is 1
 ### /make/:make/:qty?
-`http://localhost:5000/make/PIPER/5`
+`http://aviation-accident-api.tech/make/PIPER/5`
 Returns the Reports corresponding to this aircraft make with an optional limit of 5, default limit is 1
 ### /model/:model/:qty?
-`http://localhost:5000/model/PA-28-161/5`
+`http://aviation-accident-api.tech/model/PA-28-161/5`
 Returns the Reports corresponding to this aircraft model with an optional limit of 5, default limit is 1
 ### /numberofengines/:num/:qty?
-`http://localhost:5000/numberofengines/4/5`
+`http://aviation-accident-api.tech/numberofengines/4/5`
 Returns the Reports corresponding to aircraft with 4 engines with an optional limit of 5, default limit is 1
 ### /enginetype/:type/:qty?
-`http://localhost:5000/enginetype/TURBO%20FAN/5`
+`http://aviation-accident-api.tech/enginetype/TURBO%20FAN/5`
 Returns the Reports corresponding to aircraft with Turbo Fan engines with an optional limit of 5, default limit is 1
 ### /fardescription/:far/:qty?
-`http://localhost:5000/fardescription/Part%2091:%20General%20Aviation/5`
+`http://aviation-accident-api.tech/fardescription/Part%2091:%20General%20Aviation/5`
 Returns the Reports corresponding to aircraft operating under part 91 with an optional limit of 5, default limit is 1
 ### /schedule/:schedule/:qty?
-`http://localhost:5000/schedule/UNK/5`
+`http://aviation-accident-api.tech/schedule/UNK/5`
 Returns the Reports corresponding to aircraft where it was unknown if they were operating on a schedule, with an optional limit of 5, default limit is 1
 ### /aircarrier/:carrier/:qty?
-`http://localhost:5000/carrier/EAST%20COAST%20AIRWAYS,LTD/5`
+`http://aviation-accident-api.tech/carrier/EAST%20COAST%20AIRWAYS,LTD/5`
 Returns the Reports corresponding to aircraft operated by East Coast Airways, LTD; with an optional limit of 5, default limit is 1
 ### /totalfatalinjuries/:fatal/:qty?
-`http://localhost:5000/totalfatalinjuries/100/5`
+`http://aviation-accident-api.tech/totalfatalinjuries/100/5`
 Returns the Reports corresponding to Events with 100 fatal injuries with an optional limit of 5 results, default limit is 1
 ### /totalseriousinjuries/:serious/:qty?
-`http://localhost:5000/totalseriousinjuries/100/5`
+`http://aviation-accident-api.tech/totalseriousinjuries/100/5`
 Returns the Reports corresponding to Events with 100 serious injuries with an optional limit of 5 results, default limit is 1
 ### /totalminorinjuries/:minor/:qty?
-`http://localhost:5000/totalminorinjuries/100/5`
+`http://aviation-accident-api.tech/totalminorinjuries/100/5`
 Returns the Reports corresponding to Events with 100 minor injuries with an optional limit of 5 results, default limit is 1
 ### /totaluninjured/:uninjured/:qty?
-`http://localhost:5000/totaluninjured/100/5`
+`http://aviation-accident-api.tech/totaluninjured/100/5`
 Returns the Reports corresponding to Events with 100 uninjured with an optional limit of 5 results, default limit is 1
 ### /phaseofflight/:phase/:qty?
-`http://localhost:5000/phaseofflight/CRUISE/5`
+`http://aviation-accident-api.tech/phaseofflight/CRUISE/5`
 Returns the Reports corresponding to Events occurring during the cruise phase of flight with an optional limit of 5 results, default limit is 1
 ### /publicationdate/:date/:qty?
-`http://localhost:5000/publicationdate/12-05-1990/5`
+`http://aviation-accident-api.tech/publicationdate/12-05-1990/5`
 Returns the Reports published on 12/05/1990 with an optional limit of 5 results, default limit is 1
