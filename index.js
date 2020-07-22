@@ -2,6 +2,7 @@ const express = require('express');
 const mongoose = require('mongoose');
 
 const Report = require('./models/Report');
+const Tracking = require('./models/Tracking');
 
 mongoose.connect('mongodb://localhost/ntsb', {useNewUrlParser: true, useUnifiedTopology: true});
 const db = mongoose.connection;
@@ -23,6 +24,7 @@ app.get('/random', (req, res) => {
 
         Report.findOne().skip(random).exec((err, result) => {
             if (err) return console.error(err);
+            trackCalls();
             res.send(result);
         });
         
@@ -36,6 +38,7 @@ app.get('/registration/:regNum/:qty?', (req, res) => {
     const query = Report.find({ RegistrationNumber:req.params.regNum }).sort({ 'EventId': -1 }).limit(qty);
     query.exec((err, result) => {
         if (err) return console.error(err);
+        trackCalls();
         res.send(result);
     });
 });
@@ -44,6 +47,7 @@ app.get('/eventid/:eid', (req, res) => {
     // This endpoint returns Reports by EventId
     Report.find({ EventId:req.params.eid }, (err, result) => {
         if (err) return console.error(err);
+        trackCalls();
         res.send(result);
     });
 });
@@ -52,6 +56,7 @@ app.get('/accidentnumber/:anum', (req, res) => {
     // This endpoint returns Reports by AccidentNumber
     Report.find({ AccidentNumber:req.params.anum }, (err, result) => {
         if (err) return console.error(err);
+        trackCalls();
         res.send(result);
     });
 });
@@ -66,6 +71,7 @@ app.get('/date/:date/:qty?', (req, res) => {
     const query = Report.find({ EventDate:date }).sort({ 'EventId': -1 }).limit(qty);
     query.exec((err, result) => {
         if (err) return console.error(err);
+        trackCalls();
         res.send(result);
     });
 
@@ -91,6 +97,7 @@ app.get('/country/:country/:qty?', (req, res) => {
     const query = Report.find({ Country:country }).sort({ 'EventId': -1 }).limit(qty);
     query.exec((err, result) => {
         if (err) return console.error(err);
+        trackCalls();
         res.send(result);
     });
 });
@@ -103,6 +110,7 @@ app.get('/latitude/:lat/:qty?', (req, res) => {
      const query = Report.find({ Latitude:lat }).sort({ 'EventId': -1 }).limit(qty);
      query.exec((err, result) => {
          if (err) return console.error(err);
+         trackCalls();
          res.send(result);
      });
 });
@@ -115,6 +123,7 @@ app.get('/longitude/:long/:qty?', (req, res) => {
      const query = Report.find({ Longitude:long }).sort({ 'EventId': -1 }).limit(qty);
      query.exec((err, result) => {
          if (err) return console.error(err);
+         trackCalls();
          res.send(result);
      });
 });
@@ -127,6 +136,7 @@ app.get('/airportcode/:code/:qty?', (req, res) => {
      const query = Report.find({ AirportCode:code }).sort({ 'EventId': -1 }).limit(qty);
      query.exec((err, result) => {
          if (err) return console.error(err);
+         trackCalls();
          res.send(result);
      });
 });
@@ -139,6 +149,7 @@ app.get('/airportname/:name/:qty?', (req, res) => {
      const query = Report.find({ AirportName:name }).sort({ 'EventId': -1 }).limit(qty);
      query.exec((err, result) => {
          if (err) return console.error(err);
+         trackCalls();
          res.send(result);
      });
 });
@@ -151,6 +162,7 @@ app.get('/make/:make/:qty?', (req, res) => {
     const query = Report.find({ Make:make }).sort({ 'EventId': -1 }).limit(qty);
     query.exec((err, result) => {
         if (err) return console.error(err);
+        trackCalls();
         res.send(result);
     });
 });
@@ -163,6 +175,7 @@ app.get('/model/:model/:qty?', (req, res) => {
     const query = Report.find({ Model:model }).sort({ 'EventId': -1 }).limit(qty);
     query.exec((err, result) => {
         if (err) return console.error(err);
+        trackCalls();
         res.send(result);
     });
 });
@@ -175,6 +188,7 @@ app.get('/numberofengines/:num/:qty?', (req, res) => {
     const query = Report.find({ NumberOfEngines:num }).sort({ 'EventId': -1 }).limit(qty);
     query.exec((err, result) => {
         if (err) return console.error(err);
+        trackCalls();
         res.send(result);
     });
 });
@@ -187,6 +201,7 @@ app.get('/enginetype/:type/:qty?', (req, res) => {
     const query = Report.find({ EngineType:type }).sort({ 'EventId': -1 }).limit(qty);
     query.exec((err, result) => {
         if (err) return console.error(err);
+        trackCalls();
         res.send(result);
     });
 });
@@ -199,6 +214,7 @@ app.get('/fardescription/:far/:qty?', (req, res) => {
     const query = Report.find({ FARDescription:far }).sort({ 'EventId': -1 }).limit(qty);
     query.exec((err, result) => {
         if (err) return console.error(err);
+        trackCalls();
         res.send(result);
     });
 });
@@ -211,6 +227,7 @@ app.get('/schedule/:schedule/:qty?', (req, res) => {
     const query = Report.find({ Schedule:schedule }).sort({ 'EventId': -1 }).limit(qty);
     query.exec((err, result) => {
         if (err) return console.error(err);
+        trackCalls();
         res.send(result);
     });
 });
@@ -223,6 +240,7 @@ app.get('/aircarrier/:carrier/:qty?', (req, res) => {
     const query = Report.find({ AirCarrier:carrier }).sort({ 'EventId': -1 }).limit(qty);
     query.exec((err, result) => {
         if (err) return console.error(err);
+        trackCalls();
         res.send(result);
     });
 });
@@ -235,6 +253,7 @@ app.get('/totalfatalinjuries/:fatal/:qty?', (req, res) => {
     const query = Report.find({ TotalFatalInjuries:fatal }).sort({ 'EventId': -1 }).limit(qty);
     query.exec((err, result) => {
         if (err) return console.error(err);
+        trackCalls();
         res.send(result);
     });
 });
@@ -247,6 +266,7 @@ app.get('/totalseriousinjuries/:serious/:qty?', (req, res) => {
     const query = Report.find({ TotalSeriousInjuries:serious }).sort({ 'EventId': -1 }).limit(qty);
     query.exec((err, result) => {
         if (err) return console.error(err);
+        trackCalls();
         res.send(result);
     });
 });
@@ -259,6 +279,7 @@ app.get('/totalminorinjuries/:minor/:qty?', (req, res) => {
     const query = Report.find({ TotalMinorInjuries:minor }).sort({ 'EventId': -1 }).limit(qty);
     query.exec((err, result) => {
         if (err) return console.error(err);
+        trackCalls();
         res.send(result);
     });
 });
@@ -271,6 +292,7 @@ app.get('/totaluninjured/:uninjured/:qty?', (req, res) => {
     const query = Report.find({ TotalUninjured:uninjured }).sort({ 'EventId': -1 }).limit(qty);
     query.exec((err, result) => {
         if (err) return console.error(err);
+        trackCalls();
         res.send(result);
     });
 });
@@ -283,6 +305,7 @@ app.get('/phaseofflight/:phase/:qty?', (req, res) => {
     const query = Report.find({ BroadPhaseOfFlight:phase }).sort({ 'EventId': -1 }).limit(qty);
     query.exec((err, result) => {
         if (err) return console.error(err);
+        trackCalls();
         res.send(result);
     });
 });
@@ -297,12 +320,28 @@ app.get('/publicationdate/:date/:qty?', (req, res) => {
     const query = Report.find({ PublicationDate:date }).sort({ 'EventId': -1 }).limit(qty);
     query.exec((err, result) => {
         if (err) return console.error(err);
+        trackCalls();
+        res.send(result);
+    });
+});
+
+app.get('/trackcalls', (req, res) => { // track the number of API calls
+    const query = Tracking.findOne();
+    query.exec( (err, result) => {
+        if (err) return console.error(err);
         res.send(result);
     });
 });
 
 
-
+const trackCalls = () => { // when an API call is made, except for the /trackcalls endpoint and the index / endpoint, increment our DB counter
+    const query = Tracking.findOne();
+    query.exec( (err, result) => {
+        if (err) return console.error(err);
+        result.increment();
+        result.save();
+    });
+}
 
 
 
